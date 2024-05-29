@@ -39,8 +39,9 @@ extension AppLanguageVC: UITableViewDelegate, UITableViewDataSource{
         Bundle.setLanguage(languages[indexPath.row])
         RemoteConfigManager.shared.fetchRemoteConfig(completion: { _ in
             DispatchQueue.main.async {
-                // MARK: Go to homevc
-                self.navigationController?.popViewController(animated: true)
+                // MARK: Go to home vc
+                let vc = self.storyboard?.instantiateViewController(identifier: "HomeVC") as! HomeVC
+                self.navigationController?.viewControllers = [vc]
             }
         })
     }

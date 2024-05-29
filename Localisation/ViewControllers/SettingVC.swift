@@ -17,14 +17,14 @@ class SettingVC: UIViewController {
     }
     
     private func setLabelText() {
-        RemoteConfigManager.shared.fetchRemoteConfig(completion: { isSuccessful in
-            if isSuccessful{
-                let labelValue = RemoteConfigManager.shared.getString(forKey: "SettingLabel")
-                DispatchQueue.main.async {
-                    self.labelText.text = labelValue
-                }
-            }
-        })
+//        RemoteConfigManager.shared.fetchRemoteConfig(completion: { isSuccessful in
+//            if isSuccessful{
+//                let labelValue = RemoteConfigManager.shared.getString(forKey: "SettingLabel")
+//                DispatchQueue.main.async {
+//                    self.labelText.text = labelValue
+//                }
+//            }
+//        })
     }
     
     @IBAction func backBtnClicked(_ sender: UIButton){

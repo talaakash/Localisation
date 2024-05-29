@@ -28,7 +28,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="localizationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Localisation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,7 +91,7 @@
         <!--Language Demo-->
         <scene sceneID="77h-TZ-jpX">
             <objects>
-                <viewController id="gyr-bm-s9t" customClass="LanguageDemo" customModule="localizationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gyr-bm-s9t" customClass="LanguageDemo" customModule="Localisation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k2E-nS-kyx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,7 +121,7 @@
         <!--Home VC-->
         <scene sceneID="ZQk-Jr-Y8i">
             <objects>
-                <viewController id="V8t-ij-mVe" customClass="HomeVC" customModule="localizationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="V8t-ij-mVe" customClass="HomeVC" customModule="Localisation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rqZ-ww-JdY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,7 +168,7 @@
         <!--SettingVC-->
         <scene sceneID="Gl4-xR-BOj">
             <objects>
-                <viewController storyboardIdentifier="SettingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UE5-zM-YGa" customClass="SettingVC" customModule="localizationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UE5-zM-YGa" customClass="SettingVC" customModule="Localisation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jME-X9-V0P">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -228,50 +228,42 @@
         <!--App Language-->
         <scene sceneID="jtm-rd-cvd">
             <objects>
-                <viewController storyboardIdentifier="AppLanguageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uNh-f5-T28" customClass="AppLanguageVC" customModule="localizationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppLanguageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uNh-f5-T28" customClass="AppLanguageVC" customModule="Localisation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0hp-wm-rbZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UW-kG-6h0">
-                                <rect key="frame" x="16" y="123" width="361" height="35"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="English">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Uw2-1m-uOD">
+                                <rect key="frame" x="16" y="116.33333333333331" width="361" height="669.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
-                                    <action selector="englishBtnTapped:" destination="uNh-f5-T28" eventType="touchUpInside" id="LVj-1X-Kri"/>
+                                    <outlet property="dataSource" destination="uNh-f5-T28" id="D0Z-PD-wYC"/>
+                                    <outlet property="delegate" destination="uNh-f5-T28" id="0E5-Rg-tSK"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymb-RE-PAU">
-                                <rect key="frame" x="16" y="222" width="361" height="35"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Spanish">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="spanishBtnTapped:" destination="uNh-f5-T28" eventType="touchUpInside" id="tfS-4I-COX"/>
-                                </connections>
-                            </button>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fn-cB-Wc6">
+                                <rect key="frame" x="16" y="59.000000000000007" width="361" height="25.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="52C-PY-mIm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="52C-PY-mIm" firstAttribute="trailing" secondItem="7UW-kG-6h0" secondAttribute="trailing" constant="16" id="5an-wC-JQu"/>
-                            <constraint firstItem="ymb-RE-PAU" firstAttribute="leading" secondItem="52C-PY-mIm" secondAttribute="leading" constant="16" id="Ltb-Ln-ozV"/>
-                            <constraint firstItem="ymb-RE-PAU" firstAttribute="top" secondItem="7UW-kG-6h0" secondAttribute="bottom" constant="64" id="NQx-43-mIV"/>
-                            <constraint firstItem="52C-PY-mIm" firstAttribute="trailing" secondItem="ymb-RE-PAU" secondAttribute="trailing" constant="16" id="TDp-jK-mjB"/>
-                            <constraint firstItem="7UW-kG-6h0" firstAttribute="leading" secondItem="52C-PY-mIm" secondAttribute="leading" constant="16" id="gfR-Fv-7PR"/>
-                            <constraint firstItem="7UW-kG-6h0" firstAttribute="top" secondItem="52C-PY-mIm" secondAttribute="top" constant="64" id="ljL-Am-9t4"/>
+                            <constraint firstItem="52C-PY-mIm" firstAttribute="trailing" secondItem="5fn-cB-Wc6" secondAttribute="trailing" constant="16" id="3xL-1E-pbe"/>
+                            <constraint firstItem="5fn-cB-Wc6" firstAttribute="top" secondItem="52C-PY-mIm" secondAttribute="top" id="BEo-7p-cPR"/>
+                            <constraint firstItem="5fn-cB-Wc6" firstAttribute="leading" secondItem="52C-PY-mIm" secondAttribute="leading" constant="16" id="E5E-O3-Gfd"/>
+                            <constraint firstItem="Uw2-1m-uOD" firstAttribute="top" secondItem="5fn-cB-Wc6" secondAttribute="bottom" constant="32" id="WZV-Wq-EXs"/>
+                            <constraint firstItem="52C-PY-mIm" firstAttribute="trailing" secondItem="Uw2-1m-uOD" secondAttribute="trailing" constant="16" id="hFq-HC-cLJ"/>
+                            <constraint firstItem="Uw2-1m-uOD" firstAttribute="leading" secondItem="52C-PY-mIm" secondAttribute="leading" constant="16" id="szC-sP-ua8"/>
+                            <constraint firstItem="52C-PY-mIm" firstAttribute="bottom" secondItem="Uw2-1m-uOD" secondAttribute="bottom" constant="32" id="uT7-EO-et0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="App Language" id="xFK-xP-SFx"/>
+                    <connections>
+                        <outlet property="languageTbl" destination="Uw2-1m-uOD" id="HPQ-Eh-LGi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZc-00-e3c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

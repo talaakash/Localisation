@@ -14,13 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customisation after application launch.
         FirebaseApp.configure()
+        print(Bundle.main.localizations)
         checkLocalisation()
         return true
     }
     
     func checkLocalisation(){
         if let _ = UserDefaults.standard.string(forKey: "selectedLanguage"){
-            return
+//            return
         }
         setDefaultLanguage()
     }

@@ -219,6 +219,7 @@
                     <navigationItem key="navigationItem" title="SettingVC" id="GRT-dy-COC"/>
                     <connections>
                         <outlet property="labelText" destination="dzw-z2-F57" id="4q3-8q-OfJ"/>
+                        <outlet property="languageBtn" destination="vSA-OM-pan" id="ylY-wY-VnT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qb0-qn-JuM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

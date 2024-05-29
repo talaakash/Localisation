@@ -10,21 +10,21 @@ import UIKit
 class SettingVC: UIViewController {
 
     @IBOutlet weak var labelText: UILabel!
+    @IBOutlet weak var languageBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setLabelText()
+        setup()
     }
     
-    private func setLabelText() {
-//        RemoteConfigManager.shared.fetchRemoteConfig(completion: { isSuccessful in
-//            if isSuccessful{
-//                let labelValue = RemoteConfigManager.shared.getString(forKey: "SettingLabel")
-//                DispatchQueue.main.async {
-//                    self.labelText.text = labelValue
-//                }
-//            }
-//        })
+    private func setup() {
+        RemoteConfigManager.shared.fetchRemoteConfig(completion: { _ in
+            let json = RemoteConfigManager.shared.getValue(forKey: "SettingJson")
+            DispatchQueue.main.async {
+                self.labelText.text = json["title"]
+                self.languageBtn.setTitle(json["BtnLabel"], for: .normal)
+            }
+        })
     }
     
     @IBAction func backBtnClicked(_ sender: UIButton){

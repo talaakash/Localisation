@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func checkLocalisation(){
+        RemoteConfigManager.shared.fetchRemoteConfig(completion: { _ in
+            
+        })
         if let _ = UserDefaults.standard.string(forKey: "selectedLanguage"){
 //            return
         }

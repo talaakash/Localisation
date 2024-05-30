@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+    
     @IBOutlet weak var homeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,14 +20,8 @@ class HomeVC: UIViewController {
     }
     
     private func setHomeLabels() {
-        RemoteConfigManager.shared.fetchRemoteConfig(completion: { isSuccessful in
-            if isSuccessful{
-                let labelValue = RemoteConfigManager.shared.getString(forKey: "HomeLabel")
-                DispatchQueue.main.async {
-                    self.homeLabel.text = labelValue
-                }
-            }
-        })
+        let labelValue = RemoteConfigManager.shared.getString(forKey: "HomeLabel")
+        self.homeLabel.text = labelValue
     }
     
     
